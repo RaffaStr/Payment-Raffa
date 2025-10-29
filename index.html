@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Raffa Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Form Pembayaran Manual</h1>
+        <p>Silakan isi data, pilih metode, lakukan transfer manual, lalu kirim bukti.</p>
+
+        <div id="status-messages" class="status-box" style="display: none;"></div>
+
+        <form id="payment-form">
+            <h3>Detail Pesanan</h3>
+            <div class="form-group">
+                <label for="customer-name">Nama Anda</label>
+                <input type="text" id="customer-name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="customer-contact">No. WA Anda (untuk konfirmasi)</label>
+                <input type="text" id="customer-contact" placeholder="08123456789" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Jumlah (IDR)</label>
+                <input type="number" id="amount" placeholder="50000" min="1000" required>
+            </div>
+            <div class="form-group">
+                <label for="order-id">Catatan / No. Pesanan (Opsional)</label>
+                <input type="text" id="order-id" placeholder="Mis: Beli Diamond FF">
+            </div>
+
+            <h3>Pilih Metode Pembayaran</h3>
+            <p class="subtitle">Klik untuk melihat nomor rekening/tujuan.</p>
+            
+            <div class="payment-methods">
+                <div class="method-option">
+                    <input type="radio" id="method-dana" name="payment-method" value="DANA" required>
+                    <label for="method-dana">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Logo_dana_blue.svg/2560px-Logo_dana_blue.svg.png" alt="DANA">
+                        <span>DANA</span>
+                    </label>
+                </div>
+                <div class="method-option">
+                    <input type="radio" id="method-ovo" name="payment-method" value="OVO">
+                    <label for="method-ovo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/1200px-Logo_ovo_purple.svg.png" alt="OVO">
+                        <span>OVO</span>
+                    </label>
+                </div>
+                <div class="method-option">
+                    <input type="radio" id="method-gopay" name="payment-method" value="GoPay">
+                    <label for="method-gopay">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Gopay_logo.svg/1200px-Gopay_logo.svg.png" alt="GoPay">
+                        <span>GoPay</span>
+                    </label>
+                </div>
+                <div class="method-option">
+                    <input type="radio" id="method-jago" name="payment-method" value="Bank Jago">
+                    <label for="method-jago">
+                        <img src="https://www.jago.com/images/media-assets/combi1.svg" alt="Bank Jago">
+                        <span>Bank Jago</span>
+                    </label>
+                </div>
+                <div class="method-option">
+                    <input type="radio" id="method-qris" name="payment-method" value="QRIS">
+                    <label for="method-qris">
+                        <img src="https://images.seeklogo.com/logo-png/39/1/quick-response-code-indonesia-standard-qris-logo-png_seeklogo-391791.png" alt="QRIS">
+                        <span>QRIS</span>
+                    </label>
+                </div>
+                <div class="method-option">
+                    <input type="radio" id="method-crypto" name="payment-method" value="Crypto">
+                    <label for="method-crypto">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/MetaMask_Fox.svg/1200px-MetaMask_Fox.svg.png" alt="Crypto Wallet">
+                        <span>Crypto Wallet</span>
+                    </label>
+                </div>
+            </div>
+        </form>
+
+        <div id="payment-instructions" style="display: none;">
+            <h4 id="payment-title">Instruksi Pembayaran</h4>
+            <p>Silakan transfer ke nomor/alamat di bawah ini:</p>
+            <div id="payment-info" class="static-info">
+                </div>
+            <p class="note"><b>PENTING:</b> Ini adalah alur transfer manual. Setelah transfer, jangan lupa klik tombol "Kirim Bukti via WA" di bawah.</p>
+        </div>
+
+        <div id="whatsapp-confirmation" style="margin-top: 2rem;">
+            <button type="button" id="whatsapp-button">
+                Kirim Bukti Transfer via WA
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
