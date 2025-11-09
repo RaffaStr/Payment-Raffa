@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             number: "FKR2aKXxghXT7XCn9chyXhSRtTSYrWk9CLEfgKHy431W" // Alamat wallet penjual
         },
         // --- Nomor WA Admin (GANTI DI SINI) ---
-        ADMIN_WHATSAPP: "62895622494773" // Nomor WA penjual (diawali 62, tanpa + atau 0)
+        ADMIN_WHATSAPP: "6281385435612" // Nomor WA penjual (diawali 62, tanpa + atau 0)
     };
     // ----------------------------------------------------
 
